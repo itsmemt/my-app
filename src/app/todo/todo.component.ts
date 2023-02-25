@@ -6,9 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent {
-todoList:any=[]
+todoList:any[]=[]
 addTodo(todoVal:any){
  this.todoList.push({id:this.todoList.length,todo:todoVal});
- console.log(this.todoList);
+}
+deleteItem(idVal:number){
+  this.todoList=this.todoList.filter(item=>item.id!=idVal)
+  console.log(this.todoList);
 }
 }

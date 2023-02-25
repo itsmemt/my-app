@@ -2,3 +2,8 @@
    <input type="text" placeholder="Add Todo" #todo>
    <button (click)="addTodo(todo.value)">Add Todo </button>
 </div>
+<ul *ngFor="let item of todoList">
+   <li>ID:{{item.id}}</li>
+   <li>Item:{{item.todo}}</li>
+   <button (click)="deleteItem(item.id)">Delete</button>
+</ul>
